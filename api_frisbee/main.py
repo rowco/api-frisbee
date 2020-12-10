@@ -75,6 +75,7 @@ def catch_frisbee(data,request=None):
 
     frisbee = Frisbee(data)
     hop = {}
+    logger.debug(os.uname())
     hop['host'] = os.uname()[1]#.values()#['nodename']
 
     if request:
@@ -108,7 +109,7 @@ def catch_frisbee(data,request=None):
     logger.info("######################")
     logger.info("Frisbee report:")
     logger.info(f"ID: {frisbee.id}")
-    logger.info(f"ID: {frisbee.start_time}")
+    logger.info(f"TIME: {frisbee.start_time}")
 
     for i,hop in enumerate(frisbee.hops):
         for key in hop.keys():
